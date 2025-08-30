@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PHD Labs | Primary Health Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#d90429; /* Red theme */
+      --dark:#0b0b0b;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --soft:#f8fafc;
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Header */
+    .topbar{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:50;backdrop-filter:saturate(160%) blur(6px)}
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-weight:800;letter-spacing:.5px}
+    .logo span{color:var(--brand)}
+    /* User asked: PHD Labs red color, 40 font */
+    .logo .brand-text{font-size:40px; line-height:1; color:var(--brand)}
+
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{padding:10px 12px;border-radius:999px;color:#333}
+    nav a:hover{background:var(--soft)}
+
+    /* Hero */
+    .hero{padding:48px 0;background:linear-gradient(180deg,#fff, #fff 60%, #fdf2f3)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+    .badge{display:inline-block;background:#ffe4e8;color:#8a0f24;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600}
+    .title{font-size:34px;line-height:1.2;margin:10px 0 8px}
+    .subtitle{color:#334155;margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:12px;border:1px solid #e5e7eb;font-weight:600}
+    .btn-primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn-outline{background:#fff}
+
+    /* Sections */
+    section{padding:36px 0}
+    .section-title{font-size:26px;margin:0 0 16px}
+    .section-desc{color:var(--muted);margin:0 0 16px}
+
+    /* Cards & tables */
+    .grid{display:grid;gap:16px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .card{border:1px solid #eee;border-radius:var(--radius);padding:16px;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+    .price{font-weight:800;font-size:20px;color:var(--brand)}
+    .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#f1f5f9;font-size:12px;color:#0f172a}
+
+    /* Table */
+    .tbl-wrap{overflow:auto;border:1px solid #eee;border-radius:16px}
+    table{width:100%;border-collapse:collapse;background:#fff}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #f1f5f9}
+    th{background:#f9fafb;font-weight:700}
+    tbody tr:hover{background:#fff6f7}
+
+    .search{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+    .gallery img{border-radius:16px;height:100%;object-fit:cover}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr}}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+    .map{min-height:320px;border:0;border-radius:16px;width:100%}
+
+    /* Footer */
+    footer{padding:20px 0;border-top:1px solid #eee;color:#475569}
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container">
+      <div class="row" style="padding:12px 0">
+        <div class="logo" aria-label="PHD Labs">
+          <div class="brand-text">PHD Labs</div>
+          <div style="font-size:12px;color:#64748b">Primary Health Diagnostics</div>
+        </div>
+        <nav>
+          <a href="#tests">टेस्ट</a>
+          <a href="#packages">पैकेज</a>
+          <a href="#gallery">गैलरी</a>
+          <a href="#contact">संपर्क</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">तेज़ • सटीक • किफ़ायती</span>
+        <h1 class="title">Primary Health Diagnostics – भरोसेमंद ब्लड टेस्ट लैब</h1>
+        <p class="subtitle">घर बैठे सैंपल कलेक्शन • उसी दिन रिपोर्ट • NABL मानक प्रक्रिया</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="tel:+91-9000000000">अभी कॉल करें</a>
+          <a class="btn btn-outline" href="https://wa.me/919000000000" target="_blank" rel="noopener">WhatsApp बुकिंग</a>
+          <a class="btn btn-outline" href="#tests">प्राइस देखें</a>
+        </div>
+      </div>
+      <div class="card" aria-label="Lab highlights">
+        <div class="grid grid-2">
+          <div>
+            <div class="pill">होम कलेक्शन</div>
+            <div style="margin-top:6px" class="price">₹ 49 से शुरू*</div>
+            <div style="font-size:12px;color:#64748b">*पास के क्षेत्रों में</div>
+          </div>
+          <div>
+            <div class="pill">रिपोर्ट समय</div>
+            <div style="margin-top:6px" class="price">6–24 घंटे</div>
+            <div style="font-size:12px;color:#64748b">टेस्ट के अनुसार</div>
+          </div>
+        </div>
+        <hr style="margin:14px 0;border:none;border-top:1px dashed #eee" />
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span class="pill">स्मार्ट रिपोर्ट PDF</span>
+          <span class="pill">ऑनलाइन पेमेंट</span>
+          <span class="pill">डिस्काउंट्स</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tests -->
+  <section id="tests">
+    <div class="container">
+      <h2 class="section-title">टेस्ट लिस्ट व प्राइस</h2>
+      <p class="section-desc">नीचे सर्च करके अपना टेस्ट ढूँढें। सभी दाम ₹ (रुपये) में हैं।</p>
+      <input id="searchTests" class="search" placeholder="टेस्ट का नाम सर्च करें… (जैसे CBC, Thyroid)" />
+      <div class="tbl-wrap" style="margin-top:12px">
+        <table id="testsTable" aria-label="Tests and prices">
+          <thead>
+            <tr>
+              <th>टेस्ट का नाम</th>
+              <th>नमूना</th>
+              <th>रिपोर्ट समय</th>
+              <th>प्राइस</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Complete Blood Count (CBC)</td><td>Blood</td><td>Same Day</td><td class="price">₹ 250</td></tr>
+            <tr><td>Blood Sugar – Fasting (FBS)</td><td>Blood</td><td>Same Day</td><td class="price">₹ 120</td></tr>
+            <tr><td>Blood Sugar – PPBS</td><td>Blood</td><td>Same Day</td><td class="price">₹ 120</td></tr>
+            <tr><td>HbA1c</td><td>Blood</td><td>Same Day</td><td class="price">₹ 350</td></tr>
+            <tr><td>Lipid Profile</td><td>Blood</td><td>24 Hrs</td><td class="price">₹ 800</td></tr>
+            <tr><td>Liver Function Test (LFT)</td><td>Blood</td><td>24 Hrs</td><td class="price">₹ 700</td></tr>
+            <tr><td>Kidney Function Test (KFT)</td><td>Blood</td><td>24 Hrs</td><td class="price">₹ 700</td></tr>
+            <tr><td>Thyroid Profile (T3, T4, TSH)</td><td>Blood</td><td>24 Hrs</td><td class="price">₹ 600</td></tr>
+            <tr><td>Vitamin D 25(OH)</td><td>Blood</td><td>48 Hrs</td><td class="price">₹ 1200</td></tr>
+            <tr><td>Vitamin B12</td><td>Blood</td><td>24–48 Hrs</td><td class="price">₹ 900</td></tr>
+            <tr><td>CRP</td><td>Blood</td><td>Same Day</td><td class="price">₹ 500</td></tr>
+            <tr><td>Serum Calcium</td><td>Blood</td><td>Same Day</td><td class="price">₹ 250</td></tr>
+            <tr><td>Urine Routine</td><td>Urine</td><td>Same Day</td><td class="price">₹ 150</td></tr>
+            <tr><td>Dengue NS1 Antigen</td><td>Blood</td><td>Same Day</td><td class="price">₹ 600</td></tr>
+            <tr><td>Malaria Parasite (MP)</td><td>Blood</td><td>Same Day</td><td class="price">₹ 350</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages" style="background:var(--soft)">
+    <div class="container">
+      <h2 class="section-title">टेस्ट पैकेज व प्राइस</h2>
+      <p class="section-desc">पैसे की बचत के लिए सबसे लोकप्रिय हेल्थ पैकेज।</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="pill" style="background:#fee2e2;color:#7f1d1d">बेस्टसेलर</div>
+          <h3 style="margin:10px 0">बेसिक हेल्थ चेकअप</h3>
+          <p class="price">₹ 1,499</p>
+          <ul style="margin:10px 0 0 18px;color:#374151">
+            <li>CBC</li>
+            <li>FBS</li>
+            <li>LFT (Basic)</li>
+            <li>KFT (Basic)</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn btn-primary" href="https://wa.me/919000000000" target="_blank">बुक करें</a></div>
+        </div>
+        <div class="card">
+          <div class="pill" style="background:#dcfce7;color:#065f46">अधिक बचत</div>
+          <h3 style="margin:10px 0">फुल बॉडी चेकअप</h3>
+          <p class="price">₹ 3,999</p>
+          <ul style="margin:10px 0 0 18px;color:#374151">
+            <li>CBC, LFT, KFT</li>
+            <li>Lipid Profile, Thyroid (T3,T4,TSH)</li>
+            <li>HbA1c, Urine Routine</li>
+            <li>Vitamin D, Vitamin B12</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn btn-primary" href="https://wa.me/919000000000" target="_blank">बुक करें</a></div>
+        </div>
+        <div class="card">
+          <div class="pill" style="background:#e0e7ff;color:#3730a3">डायबिटीज पैकेज</div>
+          <h3 style="margin:10px 0">डायबिटीज मॉनिटरिंग</h3>
+          <p class="price">₹ 1,499</p>
+          <ul style="margin:10px 0 0 18px;color:#374151">
+            <li>FBS + PPBS</li>
+            <li>HbA1c</li>
+            <li>KFT (Basic)</li>
+            <li>Urine Sugar</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn btn-primary" href="https://wa.me/919000000000" target="_blank">बुक करें</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">गैलरी</h2>
+      <p class="section-desc">हमारी लैब और सैंपल कलेक्शन की झलकियाँ।</p>
+      <div class="gallery" aria-label="Lab photos">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="Modern laboratory equipment" loading="lazy"/>
+        <img src="https://images.unsplash.com/photo-1581091870622-7c74c8a0f7d5?q=80&w=1200&auto=format&fit=crop" alt="Blood test sampling" loading="lazy"/>
+        <img src="https://images.unsplash.com/photo-1581594693700-0fc28b90e9f1?q=80&w=1200&auto=format&fit=crop" alt="Diagnostic lab bench" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:var(--soft)">
+    <div class="container">
+      <h2 class="section-title">पता व संपर्क</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3 style="margin:0 0 8px">लैब पता</h3>
+          <p style="margin:0 0 8px;color:#334155">PHD Labs, <br/>Shop No. 12, Main Market Road,<br/>Your Area, Your City – 000000</p>
+          <p style="margin:0 0 8px"><strong>समय:</strong> रोज़ाना 7:00 AM – 9:00 PM</p>
+          <p style="margin:0 0 8px"><strong>कॉल:</strong> <a href="tel:+91-9000000000">+91 90000 00000</a></p>
+          <p style="margin:0 0 8px"><strong>ईमेल:</strong> <a href="mailto:info@phdlabs.in">info@phdlabs.in</a></p>
+          <div class="cta" style="margin-top:10px">
+            <a class="btn btn-primary" href="tel:+91-9000000000">कॉल करें</a>
+            <a class="btn btn-outline" href="https://wa.me/919000000000" target="_blank">WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">लोकेशन मैप</h3>
+          <iframe class="map" title="PHD Labs on Google Maps" src="YOUR_GOOGLE_MAPS_EMBED_URL" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p style="font-size:12px;color:#64748b;margin-top:8px">ऊपर दिए गए URL को अपने Google Maps एम्बेड लिंक से बदलें।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container row">
+      <div>© <span id="year"></span> PHD Labs. सभी अधिकार सुरक्षित।</div>
+      <div style="font-size:12px">डिस्क्लेमर: कीमतें समय-समय पर बदल सकती हैं।</div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple search filter for tests
+    const search = document.getElementById('searchTests');
+    const rows = Array.from(document.querySelectorAll('#testsTable tbody tr'));
+    search.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        r.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
